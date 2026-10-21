@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1522/FREEPDB1
+    username: demo_db
+    password: oraclejava
+    driver-class-name: oracle.jdbc.OracleDriver
+  ai:
+    model:
+      embedding: ollama
+      chat: ollama
+
+    ollama:
+      base-url: http://localhost:11434/
+
+      embedding:
+        model: nomic-embed-text
+
+      chat:
+        model: llama2
+
+server:
+  port: 9292
