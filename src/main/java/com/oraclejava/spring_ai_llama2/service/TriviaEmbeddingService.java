@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Service
@@ -39,7 +40,7 @@ public class TriviaEmbeddingService {
             String facts = row.get("facts").toString();
 
             // 2. Spring AI -> Ollama 임베딩
-            float[] vector = embeddingModel.embed(facts);
+            float[] vector = embeddingModel.embed(facts.toLowerCase(Locale.ROOT));
 
             if (vector.length != 768) {
                 throw new IllegalStateException("Invalid vector length: " + vector.length);
@@ -67,7 +68,7 @@ public class TriviaEmbeddingService {
     }
 
     public List<Map<String, Object>> searchTriviaEmbeddings(String query) {
-        float[] vector = embeddingModel.embed(query);
+        float[] vector = embeddingModel.embed(query.toLowerCase(Locale.ROOT));
         try {
             VECTOR oracleVector = VECTOR.ofFloat32Values(vector);
 

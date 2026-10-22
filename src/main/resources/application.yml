@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@//localhost:1522/FREEPDB1
+    url: jdbc:oracle:thin:@//127.0.0.1:1522/FREEPDB1
     username: demo_db
     password: oraclejava
     driver-class-name: oracle.jdbc.OracleDriver
@@ -10,7 +10,7 @@ spring:
       chat: ollama
 
     ollama:
-      base-url: http://localhost:11434/
+      base-url: http://192.168.0.12:11434/
 
       embedding:
         model: nomic-embed-text

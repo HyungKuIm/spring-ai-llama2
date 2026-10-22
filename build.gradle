@@ -27,7 +27,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// Source: https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
-	implementation 'com.oracle.database.jdbc:ojdbc11:23.26.3.0.0'
+	implementation 'com.oracle.database.jdbc:ojdbc11:23.26.2.0.0'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
